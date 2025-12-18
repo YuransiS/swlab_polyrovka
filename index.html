@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение полировке стекла | Мастер Окон</title>
+    
+    <!-- 1. TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 3. AOS CSS (Анимации) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- 4. INTL-TEL-INPUT CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <!-- FACEBOOK PIXEL -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        // ЗАМЕНИ НА СВОЙ ID
+        fbq('init', '0000000000000000'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=0000000000000000&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- END PIXEL -->
+
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #ffffff; color: #1F2937; overflow-x: hidden; }
+        
+        /* КРАСНАЯ КНОПКА (High End Style) */
+        .btn-primary {
+            background: #DC2626;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px -5px rgba(220, 38, 38, 0.5);
+            background: #B91C1C;
+        }
+        
+        /* Карточки с тенью */
+        .card-shadow {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #F3F4F6;
+            transition: transform 0.3s ease;
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            border-color: #FECACA; /* Red-200 */
+        }
+
+        /* Аккордеон FAQ */
+        .faq-item { border-bottom: 1px solid #E5E7EB; }
+        .faq-item:last-child { border-bottom: none; }
+        
+        /* Input телефона */
+        .iti { width: 100%; margin-bottom: 10px; }
+        .iti__flag { background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags.png"); }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .iti__flag { background-image: url("https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/img/flags@2x.png"); }
+        }
+    </style>
+</head>
+<body class="antialiased pb-24 md:pb-0">
+
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-40 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-extrabold text-2xl tracking-tighter">SW<span class="text-red-600">Lab</span></div>
+            <button onclick="openModal()" class="hidden md:block bg-gray-900 text-white px-5 py-2 rounded font-bold hover:bg-gray-800 transition text-sm">
+                Вход в обучение
+            </button>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header class="pt-32 pb-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Text Content (Order 2 on Mobile) -->
+                <div class="w-full lg:w-1/2 order-2 lg:order-1" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-red-100 rounded bg-red-50 text-red-700 text-xs font-bold uppercase tracking-wider">
+                        🔥 Свободная ниша 2026
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-gray-900">
+                        Освой профессию мастера <span class="text-red-600">полировки стекла</span>
+                        и зарабатывай от <span class="whitespace-nowrap">1500 zł в день</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        90% окон с царапинами выгоднее полировать, чем менять. Стань одним из немногих мастеров, кто делает это <b>без искажений и линз</b>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openModal()" class="btn-primary px-8 py-5 rounded text-lg font-bold w-full sm:w-auto text-center">
+                            ПОЛУЧИТЬ ВВОДНЫЙ УРОК
+                        </button>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-400">⚡️ Бесплатно. Доступ придет в Telegram.</p>
+                </div>
+
+                <!-- Visual (Order 1 on Mobile) -->
+                <div class="w-full lg:w-1/2 order-1 lg:order-2" data-aos="fade-left">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 group">
+                        <!-- Основная картинка -->
+                        <img src="img/img_1.png" 
+                             alt="Master Polishing" 
+                             class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                        
+                        <!-- Плашка с доходом -->
+                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-5 rounded-lg border-l-4 border-red-600 shadow-lg max-w-xs">
+                            <p class="text-gray-500 text-xs uppercase font-bold tracking-wide mb-1">Доход при полной загрузке</p>
+                            <p class="text-2xl font-black text-gray-900">35.000 - 40.000 zł</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ПРОБЛЕМА (PAIN) -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Почему клиенты ищут <span class="text-red-600">именно тебя</span>?</h2>
+                <p class="text-gray-500 text-lg">Рынок завален "мастерами", которые портят окна. Найти профи — проблема.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pain 1 -->
+                <div class="card-shadow p-8 rounded-xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl mb-6">🐶</div>
+                    <h3 class="text-xl font-bold mb-3">Бытовые повреждения</h3>
+                    <p class="text-gray-600">Собака поцарапала дверь на террасу. Строители помыли окна грязной тряпкой. Это происходит в каждом втором доме.</p>
+                </div>
+                <!-- Pain 2 -->
+                <div class="card-shadow p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl mb-6">💸</div>
+                    <h3 class="text-xl font-bold mb-3">Космическая цена замены</h3>
+                    <p class="text-gray-600">Замена панорамного окна стоит <b>6000+ zł</b>. Плюс демонтаж фасада и грязь. Клиент готов платить, чтобы этого избежать.</p>
+                </div>
+                <!-- Pain 3 (AGITATION) -->
+                <div class="card-shadow p-8 rounded-xl border-red-200" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl mb-6">⚠️</div>
+                    <h3 class="text-xl font-bold mb-3">Страх "Линзы"</h3>
+                    <p class="text-gray-600">Конкуренты шлифуют ямы (линзы). Смотреть в такое окно невозможно. Мы учим работать <b>в плоскость</b>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ДЕНЬГИ (MATH) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Сколько реально зарабатывает мастер?</h2>
+                    <p class="text-gray-600 mb-8">Математика простая. Ты продаешь навык, расходников минимум.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                            <span class="font-medium text-gray-500">Один выезд (2 часа работы)</span>
+                            <span class="text-2xl font-bold text-gray-900">800 zł</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                            <span class="font-medium text-gray-500">День (3 заказа)</span>
+                            <span class="text-2xl font-bold text-gray-900">2 400 zł</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-gray-50 p-4 rounded-lg">
+                            <span class="font-bold text-gray-700">Месяц (Работа на себя)</span>
+                            <span class="text-3xl font-black text-red-600">40 000 zł</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800">
+                        💡 <b>Факт:</b> Даже работая в найме на фирму (за 30%), мастера получают 9-12к злотых.
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2" data-aos="fade-left">
+                    <img src="img/img_2.png" alt="Money chart visual" class="rounded-2xl shadow-xl grayscale hover:grayscale-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ПРОЦЕСС (SOLUTION) -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Это не просто "потереть тряпкой"</h2>
+                <p class="text-gray-400">Это технология. Мы даем пошаговую систему.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up">
+                    <div class="text-5xl font-black text-gray-700 mb-4">01</div>
+                    <h3 class="font-bold text-lg mb-2">Диагностика</h3>
+                    <p class="text-gray-400 text-sm">Учим отличать, где можно заработать легкие деньги, а где нужен демонтаж.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl font-black text-gray-700 mb-4">02</div>
+                    <h3 class="font-bold text-lg mb-2">Техника рук</h3>
+                    <p class="text-gray-400 text-sm">Как держать машинку, чтобы не перегреть стекло и не сделать трещину.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl font-black text-gray-700 mb-4">03</div>
+                    <h3 class="font-bold text-lg mb-2">Шлифовка</h3>
+                    <p class="text-gray-400 text-sm">Удаление глубоких царапин абразивами разной зернистости.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl font-black text-gray-700 mb-4">04</div>
+                    <h3 class="font-bold text-lg mb-2">Полировка</h3>
+                    <p class="text-gray-400 text-sm">Финальный этап. Стекло становится кристально прозрачным, как с завода.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="openModal()" class="bg-white text-gray-900 hover:bg-gray-200 px-8 py-4 rounded font-bold transition">
+                    Узнать подробнее об обучении
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. КЕЙСЫ (PROOF) -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Истории из практики</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100" data-aos="fade-right">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <p class="font-bold text-gray-900">Кейс: Стройка</p>
+                            <p class="text-xs text-gray-500">Варшава</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"На объекте работала фирма, которая оставила кучу "линз" на окнах. Я просто показал заказчику эти искажения фонариком. В итоге <b>выдавил конкурентов</b>, переделал за ними работу и забрал заказ на весь дом."</p>
+                </div>
+                <!-- Case 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100" data-aos="fade-left">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <p class="font-bold text-gray-900">Кейс: Детейлинг</p>
+                            <p class="text-xs text-gray-500">Краков</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Ученик без опыта пришел устраиваться в детейлинг. Его взяли сразу, потому что он умел полировать не только кузова, но и лобовые стекла (удалять затиры от дворников). Это редкий скилл."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="py-20 container mx-auto px-6 max-w-3xl">
+        <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Частые вопросы</h2>
+        <div class="space-y-4" data-aos="fade-up">
+            
+            <details class="group bg-white border border-gray-200 rounded-lg p-6 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold list-none">
+                    Нужен ли опыт в стройке?
+                    <span class="transition group-open:rotate-180">▼</span>
+                </summary>
+                <p class="text-gray-600 mt-4">Нет. Часто новички учатся быстрее. У них нет "мышечной памяти" от полировки автокузовов, которая здесь только мешает. Мы обучаем с нуля.</p>
+            </details>
+
+            <details class="group bg-white border border-gray-200 rounded-lg p-6 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold list-none">
+                    Сколько длится обучение?
+                    <span class="transition group-open:rotate-180">▼</span>
+                </summary>
+                <p class="text-gray-600 mt-4">База дается за 2-3 дня интенсивной практики. Дальше тебе нужно около месяца самостоятельной работы, чтобы набить руку и повысить скорость.</p>
+            </details>
+
+            <details class="group bg-white border border-gray-200 rounded-lg p-6 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold list-none">
+                    Где искать клиентов?
+                    <span class="transition group-open:rotate-180">▼</span>
+                </summary>
+                <p class="text-gray-600 mt-4">Google, Facebook, сарафанное радио. Спрос огромный. Мы расскажем, как бесплатно получать заявки и как общаться с прорабами.</p>
+            </details>
+
+            <details class="group bg-white border border-gray-200 rounded-lg p-6 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold list-none">
+                    А если я разобью окно?
+                    <span class="transition group-open:rotate-180">▼</span>
+                </summary>
+                <p class="text-gray-600 mt-4">Мы даем карту рисков. Ты будешь знать, за какие повреждения браться безопасно, а где есть риск трещины. Если соблюдать технологию — риск минимален.</p>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- 7. FINAL CTA -->
+    <section class="py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-red-600 opacity-10 blur-3xl"></div>
+        <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Рынок свободен. <br>Пока другие боятся — ты действуй.</h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+                Посмотри бесплатный вводный урок, чтобы понять суть процесса и увидеть, как делаются первые деньги.
+            </p>
+            <button onclick="openModal()" class="btn-primary px-12 py-5 rounded-lg text-xl font-bold shadow-2xl">
+                ПОЛУЧИТЬ ДОСТУП К УРОКУ
+            </button>
+            <p class="mt-4 text-gray-500 text-sm">Без спама. Только полезный контент.</p>
+        </div>
+    </section>
+
+    <!-- STICKY MOBILE BUTTON -->
+    <div class="fixed bottom-0 left-0 w-full p-4 bg-white border-t border-gray-200 md:hidden z-50">
+        <button onclick="openModal()" class="btn-primary w-full py-4 rounded font-bold text-lg shadow-lg">
+            ПОЛУЧИТЬ ВИДЕО
+        </button>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-2xl shadow-2xl p-8">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl">&times;</button>
+            
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-extrabold text-gray-900 mb-2">Бесплатный урок</h3>
+                <p class="text-gray-500 text-sm">Заполни форму, чтобы получить видео-разбор профессии в Telegram</p>
+            </div>
+            
+            <form id="leadForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Имя</label>
+                    <input type="text" id="name" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-3 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition" placeholder="Твое имя">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Телефон</label>
+                    <input type="tel" id="phone" required class="w-full bg-gray-50 border border-gray-300 rounded px-4 py-3 focus:outline-none focus:border-red-600 transition">
+                </div>
+                <button type="submit" id="submitBtn" class="btn-primary w-full py-4 rounded font-bold text-lg mt-2">
+                    ОТПРАВИТЬ
+                </button>
+                <p class="text-xs text-center text-gray-400">Данные в безопасности</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIC SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"></script>
+
+    <script>
+        // Init AOS
+        AOS.init({ once: true, duration: 800, offset: 50 });
+
+        // --- SETTINGS (ИЗМЕНИТЬ) ---
+        const GOOGLE_SCRIPT_URL = 'ВСТАВЬ_СЮДА_URL_ТВОЕГО_WEB_APP'; 
+        const TELEGRAM_BOT_URL = 'https://t.me/swlab_education_bot';
+        const BOT_START_PARAM = '69281cb2c'; // Параметр воронки
+        // ---------------------------
+
+        // Modal Logic
+        const modal = document.getElementById('modal');
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+
+        // Phone Input Logic
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            initialCountry: "auto",
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                .then(res => res.json())
+                .then(data => callback(data.country_code))
+                .catch(() => callback("pl"));
+            },
+            separateDialCode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+        });
+
+        // UTM Parser
+        function getUTMparams() {
+            const params = new URLSearchParams(window.location.search);
+            let utmString = '';
+            for (const [key, value] of params.entries()) {
+                if (key.startsWith('utm_')) {
+                    utmString += `&${key}=${value}`;
+                }
+            }
+            return utmString;
+        }
+
+        // Form Submit
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const originalText = btn.innerText;
+            btn.innerText = "Загрузка...";
+            btn.disabled = true;
+
+            const name = document.getElementById('name').value;
+            const phone = iti.getNumber();
+            const utms = getUTMparams();
+
+            // Pixel Event
+            if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
+
+            // Send to Google Script
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({
+                    timestamp: new Date().toISOString(),
+                    name: name,
+                    phone: phone,
+                    utm: utms
+                })
+            })
+            .then(() => {
+                // Redirect to Telegram with UTM tail
+                window.location.href = `${TELEGRAM_BOT_URL}?start=${BOT_START_PARAM}${utms}`;
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Ошибка. Попробуйте еще раз.');
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>

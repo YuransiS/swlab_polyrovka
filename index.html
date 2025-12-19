@@ -96,36 +96,18 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
-                <!-- ИЗМЕНЕНИЕ: Левая колонка теперь содержит картинку для мобильных -->
-                <div class="w-full lg:w-1/2" data-aos="fade-right">
-                    
-                    <!-- 1. СВОБОДНАЯ НИША -->
+                <!-- Text Content (Order 1 on Mobile, Order 1 on Desktop) -->
+                <div class="w-full lg:w-1/2 order-1 lg:order-1" data-aos="fade-right">
                     <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-red-100 rounded bg-red-50 text-red-700 text-xs font-bold uppercase tracking-wider">
                         🔥 Свободная ниша 2026
                     </div>
-                    
-                    <!-- 2. ОФФЕР -->
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 text-gray-900">
                         Освой профессию мастера полировки стекла и зарабатывай от <span class="text-red-600">10 000 zł в месяц</span>
                     </h1>
-
-                    <!-- 3. КАРТИНКА (Только для мобильных) -->
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 group my-8 lg:hidden">
-                        <img src="img/img_1.png" 
-                             alt="Master Polishing Mobile" 
-                             class="w-full h-auto object-cover">
-                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-5 rounded-lg border-l-4 border-red-600 shadow-lg max-w-xs">
-                            <p class="text-gray-500 text-xs uppercase font-bold tracking-wide mb-1">Доход при полной загрузке</p>
-                            <p class="text-2xl font-black text-gray-900">30.000 - 40.000 zł</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 4. ТЕКСТ -->
                     <p class="text-gray-600 text-lg mb-8 leading-relaxed">
                         Рынок полировки стекла пуст. Клиенты с деньгами ищут, кто спасет их окна от замены за 6000 zł, но находят только дилетантов. <b>Забери этот рынок себе.</b>
                     </p>
                     
-                    <!-- 5. КНОПКА -->
                     <div class="flex flex-col sm:flex-row gap-4">
                         <button onclick="openModal()" class="btn-primary px-8 py-5 rounded text-lg font-bold w-full sm:w-auto text-center">
                             ПОЛУЧИТЬ ВВОДНЫЙ УРОК
@@ -134,12 +116,15 @@
                     <p class="mt-4 text-sm text-gray-400">⚡️ Бесплатно. Доступ придет в Telegram.</p>
                 </div>
 
-                <!-- ИЗМЕНЕНИЕ: Правая колонка с картинкой теперь видна только на десктопе -->
-                <div class="hidden lg:block w-full lg:w-1/2" data-aos="fade-left">
+                <!-- Visual (Order 2 on Mobile, Order 2 on Desktop) -->
+                <div class="w-full lg:w-1/2 order-2 lg:order-2" data-aos="fade-left">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 group">
+                        <!-- Основная картинка -->
                         <img src="img/img_1.png" 
                              alt="Master Polishing" 
                              class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700">
+                        
+                        <!-- Плашка с доходом -->
                         <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-5 rounded-lg border-l-4 border-red-600 shadow-lg max-w-xs">
                             <p class="text-gray-500 text-xs uppercase font-bold tracking-wide mb-1">Доход при полной загрузке</p>
                             <p class="text-2xl font-black text-gray-900">30.000 - 40.000 zł</p>
@@ -150,7 +135,7 @@
         </div>
     </header>
 
-    <!-- 2. ПРОБЛЕМА (PAIN) -->
+    <!-- 2. ПРОБЛЕМА И РЫНОК (PAIN & SCOPE) -->
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
@@ -171,11 +156,11 @@
                     <h3 class="text-xl font-bold mb-3">Космическая цена замены</h3>
                     <p class="text-gray-600">Замена панорамного окна стоит <b>6000+ zł</b>. Плюс демонтаж фасада и грязь. Клиент готов платить, чтобы этого избежать.</p>
                 </div>
-                <!-- Pain 3 (AGITATION) -->
+                <!-- Opportunity 3 (ВМЕСТО ЛИНЗ - ПРО РАЗНООБРАЗИЕ) -->
                 <div class="card-shadow p-8 rounded-xl border-red-200" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl mb-6">⚠️</div>
-                    <h3 class="text-xl font-bold mb-3">Страх "Линзы"</h3>
-                    <p class="text-gray-600">Конкуренты шлифуют ямы (линзы). Смотреть в такое окно невозможно. Мы учим работать <b>в плоскость</b>.</p>
+                    <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl mb-6">🌍</div>
+                    <h3 class="text-xl font-bold mb-3">Не только окна домов</h3>
+                    <p class="text-gray-600">По этой технологии ты сможешь восстанавливать <b>автостекла, витрины магазинов, стеклянные столы и зеркала</b>. Клиенты есть в любой сфере.</p>
                 </div>
             </div>
         </div>
@@ -225,10 +210,11 @@
                     <h3 class="font-bold text-lg mb-2">Оценка рисков</h3>
                     <p class="text-gray-400 text-sm">Ты выбираешь только те заказы, где маржа 500%+, и отсеиваешь проблемных клиентов</p>
                 </div>
+                <!-- Card 2 (Убраны линзы, добавлена безопасность) -->
                 <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-5xl font-black text-gray-700 mb-4">02</div>
-                    <h3 class="font-bold text-lg mb-2">Сохранение геометрии</h3>
-                    <p class="text-gray-400 text-sm">Главный секрет, почему платят тебе, а не конкурентам — ты не делаешь "линз" и искажений</p>
+                    <h3 class="font-bold text-lg mb-2">Безопасность</h3>
+                    <p class="text-gray-400 text-sm">Главный страх — разбить. Мы даем технику, с которой ты работаешь уверенно и без рисков перегрева.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-5xl font-black text-gray-700 mb-4">03</div>
@@ -265,7 +251,7 @@
                             <p class="text-xs text-gray-500">Варшава</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">"На коттедже уже работала бригада полировщиков. Я просто пришел, посветил фонариком и показал заказчику, что они наделали «линз» (ям на стекле). Заказчик был в бешенстве, потому что окна премиальные. Их выгнали сразу же. <b>Я переделал их брак, восстановил геометрию и</b>, забрал весь объем работ на этом доме"</p>
+                    <p class="text-gray-700 italic">"На коттедже уже работала бригада полировщиков. Я просто пришел, посветил фонариком и показал заказчику их косяки. Заказчик был в бешенстве, потому что окна премиальные. Их выгнали сразу же. <b>Я переделал их брак, сделал все идеально</b> и забрал весь объем работ на этом доме"</p>
                 </div>
                 <!-- Case 2 -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100" data-aos="fade-left">
